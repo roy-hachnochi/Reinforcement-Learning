@@ -6,7 +6,7 @@ from Players.QTPlayer import QTPlayer
 from Players.DQPlayer import DQPlayer
 from Players.RandomPlayer import RandomPlayer
 from Players.SemiRandomPlayer import SemiRandomPlayer
-from Auxiliary import *
+from Utility.Auxiliary import *
 
 def save_if_needed(p, filename):
     if isinstance(p, QTPlayer) or isinstance(p, DQPlayer):
@@ -19,7 +19,7 @@ def load_if_needed(p, filename):
 # =================================================================================================================== #
 
 if __name__ == '__main__':
-    mode = "train"  # "train", "evaluate", "play"
+    mode = "play"  # "train", "evaluate", "play"
     nGames = 100000
     state = TicTacToeState()  # TicTacToeState(), Connect4State()
     policy_fileName = "./TicTacToe/Policies/DQpolicy_selfPlay"  # save/load policy
@@ -31,8 +31,8 @@ if __name__ == '__main__':
     #   DQPlayer("DQ", tictactoe_dqn_args, isLearning=True)
     #   RandomPlayer("Randy")
     #   SemiRandomPlayer("Randy")
-    p1 = DQPlayer("DQ", tictactoe_dqn_args, isLearning=True)
-    p2 = SemiRandomPlayer("Randy")
+    p1 = HumanPlayer("Roy")
+    p2 = DQPlayer("DQ", tictactoe_dqn_args, isLearning=True)
 
     if mode == "train":
         log = train(state, p1, p2, nGames=nGames)

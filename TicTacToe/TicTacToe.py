@@ -133,20 +133,20 @@ class TicTacToeState:
         self.curPlayer = Consts.P1
 
 
-tictactoe_dqn_args = DQNArgs(ch=2,
-                             h=BOARD_DIM,
-                             w=BOARD_DIM,
-                             output_size=BOARD_DIM**2,
-                             layer_channels=[32, 32],
-                             layer_sizes=[3, 3],
-                             layer_strides=[1, 1],
-                             layer_padding=[1, 1],
-                             batch_size=32,
-                             mem_size=100000,
-                             target_update=5000,
-                             eps_decay=2e4,
-                             lr=0.001,
-                             gamma=0.99)
+tictactoe_dqn_args = DQNArgs(ch=N_CH,                   # NN input channels - don't change this!
+                             h=BOARD_DIM,               # NN input height - don't change this!
+                             w=BOARD_DIM,               # NN input width - don't change this!
+                             output_size=BOARD_DIM**2,  # NN output size (number of actions) - don't change this!
+                             layer_channels=[64, 32],   # number of channels for each layer
+                             layer_sizes=[3, 1],        # kernel sizes for each layer
+                             layer_strides=[1, 1],      # stride for each layer
+                             layer_padding=[0, 0],      # padding for each layer
+                             batch_size=32,             # batch size for optimization step
+                             mem_size=100000,           # replay memory size
+                             target_update=5000,        # training step period for target network update
+                             eps_decay=2e4,             # exploration rate decay
+                             lr=0.001,                  # learning rate
+                             gamma=0.99)                # MDP discount factor
 
 
 def line_heuristic(l, player):

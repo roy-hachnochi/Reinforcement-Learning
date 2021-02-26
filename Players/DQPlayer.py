@@ -62,7 +62,7 @@ class DQPlayer(Player):
         torch.save(self.policyNet.state_dict(), fileName)
 
     def load_policy(self, fileName):
-        self.policyNet.load_state_dict(torch.load(fileName))
+        self.policyNet.load_state_dict(torch.load(fileName, map_location=self.device))
         if self.isLearning:
             self.targetNet.load_state_dict(self.policyNet.state_dict())
 
