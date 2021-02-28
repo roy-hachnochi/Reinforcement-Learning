@@ -155,6 +155,6 @@ Detailed results are concluded in the three notebooks, including results for var
 | :--------------------------------------------: | :-----------------------------------------: | :------------------------------------------: | :----------------------------------: |
 | **Tic Tac Toe -** <br />**Tabular Q-learning** | Win: 93.17%<br />Lose: 0.2%<br />Tie: 6.63% |                      -                       | Win: 0%<br />Lose: 0%<br />Tie: 100% |
 |   **Tic Tac Toe -**<br />**Deep Q-learning**   |                      -                      | Win: 94.59%<br />Lose: 0.29%<br />Tie: 5.12% | Win: 0%<br />Lose: 0%<br />Tie: 100% |
-|    **Connect 4 -**<br />**Deep Q-learning**    |                    TODO                     |                     TODO                     |                 TODO                 |
+|    **Connect 4 -**<br />**Deep Q-learning**    |                      -                      |  Win: 63.62%<br />Lose: 36.38%<br />Tie: 0%  | Win: 0%<br />Lose: 100%<br />Tie: 0% |
 
 As we can see, the results are close to perfect for Tic Tac Toe, but not nearly as good for Connect 4. There is much probably work to do here to make this work, either in the training, the architecture, the hyperparameters, or the algorithm itself. But all of this for another time...
